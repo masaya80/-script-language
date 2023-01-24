@@ -3,24 +3,28 @@
 <%= render @user %>
 
 <div>
-  <h1>アカウント情報</h1>
-  <p><%= @user.name %></p>
-  <p><%= @user.id %></p>
-  <h2>タスク状況</h2>
-  <% @user.tasks.each do |task| %>
-    <h3><%= task.title %></h3>
-    <p>タスクID：<%= task.id %></p>
-    <p>タスク内容：<%= task.content %></p>
-      <% if task.photo.attached? %>
-        <p>タスク関連画像：</p>
-        <%= image_tag url_for(task.photo), height: 100 %>
-      <% else %>
-         No Image
-      <% end %>
-  <% end %>
-  <br/>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
+  <% if @user.id == current_user.id %>
+    <h1>アカウント情報</h1>
+    <p><%= @user.name %></p>
+    <p><%= @user.id %></p>
+    <h2>タスク状況</h2>
+    <% @user.tasks.each do |task| %>
+      <h3><%= task.title %></h3>
+      <p>タスクID：<%= task.id %></p>
+      <p>タスク内容：<%= task.content %></p>
+        <% if task.photo.attached? %>
+          <p>タスク関連画像：</p>
+          <%= image_tag url_for(task.photo), height: 100 %>
+        <% else %>
+          No Image
+        <% end %>
+    <% end %>
+    <br/>
+    <%= link_to "Edit this user", edit_user_path(@user) %> |
+    <%= link_to "Back to users", users_path %>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
+    <%= button_to "Destroy this user", @user, method: :delete %>
+  <% else %>
+    <p>アクセス権限がありません</p>
+  <% end %>
 </div>
