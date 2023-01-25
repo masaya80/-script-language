@@ -12,22 +12,22 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
+    <%= form.label :タイトル, style: "display: block" %>
     <%= form.text_field :title %>
   </div>
 
   <div>
-    <%= form.label :content, style: "display: block" %>
+    <%= form.label :内容, style: "display: block" %>
     <%= form.text_field :content %>
   </div>
 
   <div class="field">
-    <%= form.label :photo %>
+    <%= form.label :写真 %>
     <%= form.file_field :photo %>
   </div>
 
 
   <div>
-    <%= form.submit %>
+    <%= form.submit :タスク追加%>
   </div>
 <% end %>

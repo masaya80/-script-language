@@ -11,10 +11,12 @@
         <h3><%= task.title %></h3>
         <p>タスクID：<%= task.id %></p>
         <p>タスク内容：<%= task.content %></p>
-          <% if task.photo.attached? %>
-            <p>タスク関連画像：</p>
-            <%= image_tag url_for(task.photo), height: 100 %>
-          <% end %>
+        <% if task.photo.attached? %>
+          <p>タスク関連画像：</p>
+          <%= image_tag url_for(task.photo), height: 100 %>
+        <% end %>
+        <%= link_to "編集", edit_task_path(task) %>
+        <%= button_to "消去", task, method: :delete ,data: { confirm: '上記の内容で投稿を更新します。よろしいですか？' } %>
         <hr>
       <% end %>
     <% else %>
