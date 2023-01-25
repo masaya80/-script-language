@@ -1,6 +1,6 @@
 ## 起動方法
-1. docker run -itd -v $PWD:/home -w /home -p 127.0.0.1:3000:3000 --name school ruby /bin/bash
-2. docker exec -it school /bin/bash
+1. docker run -itd -v $PWD:/home -w /home -p 127.0.0.1:3000:3000 --name script-last ruby /bin/bash
+2. docker exec -it script-last /bin/bash
 3. apt update
 4. apt install sqlite3
 5. gem install rails
