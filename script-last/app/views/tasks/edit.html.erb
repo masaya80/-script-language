@@ -1,7 +1,9 @@
 <h1>タスクを編集する</h1>
-
-<%= render "form", task: @task %>
-
+<% if current_user.id == @task.user_id%>
+  <%= render "form", task: @task %>
+<% else %>
+    <p>アクセス権限がありません</p>
+<% end %>
 <br>
 
 <div>
