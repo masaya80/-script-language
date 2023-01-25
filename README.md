@@ -7,4 +7,7 @@
 6. bundle install
 7. rails server -b 0.0.0.0
 
+access to(probably)↓
+http://localhost:3000/ 
+
 基本は授業スライド通りなのであとはよしなに。
