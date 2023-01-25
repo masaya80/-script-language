@@ -1,3 +1,7 @@
+##　必要なもの
+- docker
+- プログラミング愛
+
 ## 起動方法
 1. docker run -itd -v $PWD:/home -w /home -p 127.0.0.1:3000:3000 --name script-last ruby /bin/bash
 2. docker exec -it script-last /bin/bash
